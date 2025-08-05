@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany</groupId>
+    <artifactId>NewerCalc</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>11</maven.compiler.release>
+    <path.to.javafx.libs>/Users/alysamiller/javafx-sdk-17.0.15/lib</path.to.javafx.libs>
+</properties>
+
+<dependencies>
+    <!-- JavaFX dependencies -->
+    <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-controls</artifactId>
+        <version>17.0.15</version>
+    </dependency>
+    <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-fxml</artifactId>
+        <version>17.0.15</version>
+    </dependency>
+</dependencies>
+
+
+<repositories>
+    <repository>
+        <id>openjfx</id>
+        <url>https://maven-central.storage-download.googleapis.com/maven2</url>
+    </repository>
+</repositories>
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>0.0.5</version>
+            <configuration>
+                <mainClass>com.mycompany.newercalc.NewerCalc</mainClass>
+                <commandlineArgs></commandlineArgs>
+                <arguments>
+                    <argument>--module-path</argument>
+                    <argument>${path.to.javafx.libs}</argument>
+                    <argument>--add-modules</argument>
+                    <argument>javafx.controls,javafx.fxml</argument>
+                </arguments>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+</project>
