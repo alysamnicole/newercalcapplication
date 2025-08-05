@@ -1,1 +1,2 @@
-<b>BMI Calculator Output</b>
+## BMI Calculator Output
+<img src = BMICalculator.png>
